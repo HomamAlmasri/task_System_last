@@ -9,7 +9,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [JobController::class, 'index']);
+//Route::get('/', [JobController::class, 'index']);
 
 // dd(phpinfo());
 
@@ -24,7 +24,8 @@ Route::middleware('guest')->group(function () {
 });
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function ()
+{
     Route::post('/logout', [SessionController::class, 'destroy']);
 
     Route::get('/jobs/create', [JobController::class, 'create'])->can('create', 'task');
@@ -41,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
 // Route::patch('/task/{task}', [TaskController::class, 'update']);
 
 Route::controller(TaskController::class)->group(function () {
-    Route::get('/task', 'index')->middleware('auth');
+    Route::get('/', 'index')->middleware('auth');
 
     Route::get('/task/create', 'create')
         ->middleware('auth', 'create_task');

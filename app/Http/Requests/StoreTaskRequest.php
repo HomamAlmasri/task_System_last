@@ -23,13 +23,13 @@ class StoreTaskRequest extends FormRequest
     {
 
         return [
-            'title' => 'required|min:3',
-            'discription' => 'required|max:300',
-            'employer_name' => 'required',
-            'project' => 'required',
-            'time_expected' => 'required',
-            'tag' => 'required',
-            'priority' => 'required'
+            'title'             => 'required|min:3',
+            'discription'       => 'required|max:300',
+            'employer_name'     => 'required',
+            'project'           => 'required',
+            'time_expected'     => 'required',
+            'tag'               => 'required',
+            'priority'          => 'required'
 
         ];
     }

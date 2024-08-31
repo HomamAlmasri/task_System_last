@@ -35,7 +35,7 @@ class SessionController extends Controller
             ]);
         }
         $request->session()->regenerate();
-        return redirect('/task');
+        return redirect('/');
     }
     /**
      * Remove the specified resource from storage.

@@ -19,7 +19,7 @@ class TaskFactory extends Factory
         return [
             'title' => fake()->title,
             'discription' => fake()->text,
-            'employer_name' => 'Test',
+            'employer_name' => 'x',
             'time_expected' => 3,
             'tag' => fake()->randomElement(['Back-End', 'Front-End', 'Test']),
             'priority' => fake()->randomElement(['Hight', 'Medium', 'Low']),

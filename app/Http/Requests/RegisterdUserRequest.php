@@ -27,7 +27,6 @@ class RegisterdUserRequest extends FormRequest
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users',
             'password' => ['required', 'confirmed', Password::min(6)],
-            'logo' => [File::types('png', 'jpg', 'webp')]
         ];
     }
 }

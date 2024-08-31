@@ -19,16 +19,11 @@
     <div class="px-10">
         <nav class="flex justify-between py-4 border-b border-white/10 ">
             <div class="flex space-x-5">
-
-                <img class="w-16 h-16o" src="{{ Vite::asset('resources/images/logo2.jpg') }}" alt="">
-
-                @auth
-                    <x-heading>
-                        <a href="/task" class="hover:bg-blue-900 rounded-xl px-2 py-1"> Home</a>
-                    </x-heading>
-                </div>
-                <div class="space-x-16 font-bold mt-auto mb-5">
-                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1" href="/task">My Tasks</a></x-heading>
+                <img class="w-16 h-16" src="{{ Vite::asset('resources/images/logo2.jpg') }}" alt="">
+            </div>
+            @auth
+                <div class="space-x-10 flex font-bold mt-auto mb-5">
+                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1" href="/task">Tasks</a></x-heading>
                     <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1"href="/project">Porjects</a></x-heading>
                 </div>
             @endauth
@@ -36,7 +31,6 @@
             @guest
                 <div class="mt-4">
                     <x-heading><a href="/login" class="hover:bg-blue-900 rounded-xl px-2 py-1">Log In</a></x-heading>
-                    <x-heading><a href="/register" class="hover:bg-blue-900 rounded-xl px-2 py-1">Sign up</a></x-heading>
                 </div>
             @endguest
         </nav>
