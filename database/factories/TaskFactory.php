@@ -18,7 +18,7 @@ class TaskFactory extends Factory
     {
         return [
             'title' => fake()->title,
-            'discription' => fake()->text,
+            'description' => fake()->text,
             'employer_name' => 'x',
             'time_expected' => 3,
             'tag' => fake()->randomElement(['Back-End', 'Front-End', 'Test']),

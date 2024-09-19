@@ -15,16 +15,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black text-white font-hanken-grotesk">
+<body class="bg-black text-white font-hanken-grotesk mb-16">
     <div class="px-10">
         <nav class="flex justify-between py-4 border-b border-white/10 ">
             <div class="flex space-x-5">
-                <img class="w-16 h-16" src="{{ Vite::asset('resources/images/logo2.jpg') }}" alt="">
+{{--                <img class="w-16 h-16" src="{{ Vite::asset('resources/images/logo2.jpg') }}" alt="">--}}
             </div>
             @auth
-                <div class="space-x-10 flex font-bold mt-auto mb-5">
-                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1" href="/task">Tasks</a></x-heading>
-                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1"href="/project">Porjects</a></x-heading>
+                <div class="space-x-10 flex font-bold pt-6 mb-5">
+                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1 " href="/">Tasks</a></x-heading>
+                    <x-heading> <a class="hover:bg-blue-900 rounded-xl px-2 py-1" href="/project">Porjects</a></x-heading>
                 </div>
             @endauth
             @yield('nav')

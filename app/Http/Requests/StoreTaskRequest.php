@@ -24,9 +24,10 @@ class StoreTaskRequest extends FormRequest
 
         return [
             'title'             => 'required|min:3',
-            'discription'       => 'required|max:300',
+            'description'       => 'required|max:300',
             'employer_name'     => 'required',
             'project'           => 'required',
+            'feature'           => 'required',
             'time_expected'     => 'required',
             'tag'               => 'required',
             'priority'          => 'required'

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tasks;
 
-use App\Models\Task;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Task;
 use App\Models\User;
 use App\Services\TimeService;
-use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -20,7 +20,8 @@ class TaskController extends Controller
         return view('task.index', [
             'tasks' => $tasks,
             'users' => User::all()
-        ]);;
+        ]);
+
     }
 
     /**
@@ -38,7 +39,7 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request)
     {
         Task::create($request->validated());
-        return redirect('/task')->with('success', 'Done');
+        return redirect('/')->with('success', 'Done');
     }
 
     /**
@@ -58,7 +59,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('task.edit',['task'=> $task]);
     }
 
     /**
@@ -67,7 +68,7 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task)
     {
         TimeService::updateTask($request, $task);
-        return redirect('/task');
+        return redirect('/');
     }
 
     /**

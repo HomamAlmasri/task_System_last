@@ -15,12 +15,13 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('discription');
+            $table->string('description');
             $table->string('employer_name');
             $table->decimal('time_expected');
             $table->string('tag');
             $table->integer('counter')->default(0);
             $table->string('project')->nullable();
+            $table->string('feature')->nullable();
             $table->string('note')->nullable();
             $table->string('priority')->nullable();
             $table->tinyInteger('progamming')->default(0);

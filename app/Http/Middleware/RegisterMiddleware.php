@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class CreateTaskMiddleware
+class RegisterMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class CreateTaskMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->role === 'admin') {
+        if ( Auth::user()->role == 'admin') {
             return $next($request);
-        }
+         }
         abort(403, 'Unauthorized Action');
     }
 }
