@@ -27,7 +27,7 @@ class RegisterdUserController extends Controller
         $userAttributes = $request->validated();
         $user =  User::create($userAttributes);
         // $logoPath =  $request->logo->store('logo');
-        Auth::login($user);
+    //        Auth::login($user);
         return redirect('/task')->with('Sucess', 'Login Successful');
     }
 }
